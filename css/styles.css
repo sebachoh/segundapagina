@@ -85,6 +85,14 @@ header{
 
 }
 
+#logo:hover{
+    border-radius: 2px;
+    color: black;
+    background-color: #ccc;
+
+}
+
+
 #logo .gear{
     display: block;
     float: left;
@@ -99,10 +107,40 @@ header{
 
 @keyframes rotate-gear{
     from{
-        transform: rotateZ('0deg');
+        transform: rotateZ(0deg);
     }
     to{
-        transform: rotateZ('360deg');
+        transform: rotateZ(360deg);
+    }
+}
+
+#logo:hover .gear{
+    animation: fromBelow 500ms linear;
+}
+
+@keyframes fromBelow{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(200%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+}
+
+
+#logo:hover h3{
+    animation: fromRight 300ms linear;
+}
+
+@keyframes fromRight {
+    from{
+        transform: translateX(200%);
+    }
+    to{
+        transform: translateX(0%);
     }
 }
 
@@ -465,9 +503,6 @@ aside h3:first-child{
     text-decoration: none;
 }
 
-#blog a:hover{
-/*hola*/
-}
 
 #footer{
     width: 100%;
